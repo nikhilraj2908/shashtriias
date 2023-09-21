@@ -1,0 +1,197 @@
+footer{
+    padding: 30px;
+    background-color: black ;
+    color: white;
+   }
+   .header-lower{
+        display: flex;
+        /* grid-template-columns: 1fr 5fr 5fr 1fr; */
+        justify-content: space-between;
+        height: 60px;
+        background-color: lightgray;
+        border-bottom: 1px solid lightgray;
+    }
+   .input-group:hover{
+        border:1px solid black;
+        border-radius: 5px;
+    }
+    .input-group>span:hover{
+        cursor: pointer;
+    }
+    .input-group{
+        width: 700px;
+        height: 40px;
+    }
+    .menu-bar{
+        font-size: 20px;
+        margin-left: 20px;
+        
+    }
+    .menu-bar:hover{
+        cursor: pointer;
+    }
+    .menu-bar, .input-group {
+    align-self: center;
+   }
+    .menu-tittle{
+        margin-right: 20px;
+        text-decoration: none;
+        color: black;
+    }
+    .menu-tittle:hover{
+        text-decoration: underline;
+        color: blue;
+    }
+    .footer1{
+        display: grid;
+        grid-template-columns: 3fr 3fr 3fr 3fr;
+    }
+    .title ~ span{
+    font-size: 20px;
+    padding: 5px;
+   }
+   .title {
+    font-size: 26px;
+    font-weight: bold;
+   }
+   
+   h4, .title {
+    margin-bottom: 15px;
+   }
+   .container{
+    background-color: lightcyan;
+    margin-bottom: 50px;
+   }
+  
+   blockquote{
+    font: italic;
+    text-align: justify;
+    text-indent: 50px;
+   }
+   nav a{
+    color: white;
+   }
+   .youtube:hover, .instagram:hover{
+    color: red;
+   }
+   .whatsapp:hover{
+    color: rgb(9, 190, 9);
+   }
+   .telegram:hover{
+    color: rgb(59, 134, 159);
+   }
+   ul li{
+    list-style: disc;
+   }
+   .card{
+    background-image: url(../../public/faqs.jpg);
+    width: 20%;
+    height: 40%;
+   }
+   .faqs{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    height: 50%;
+   }
+   .img-top{
+    width: 10vw;
+    height: 35px;
+    margin-left: 10px;
+    margin-top: 8px;
+   }
+   .footer-logo{
+    width:10vw; height: 35px; 
+   }
+   .footer-body{
+    margin-left: 300px;
+   }
+   .title{
+    color: gray;
+   }
+   .footer-logo{
+    width:10vw; height: 2.5vw; 
+   }
+   h3{
+    text-align: center;
+   }
+   .socialtop{
+    margin-top: 18px;
+   }
+   
+   .humburger{
+        margin-top: 11px;
+        margin-left: 40px;
+    }
+  .bar {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 6px 0;
+    }
+    #Home{
+    height: 50px; background-color: rebeccapurple;padding: 15px;
+    }
+    .Home-tag{
+        text-align: center; color: white;word-spacing: 10px; letter-spacing: 5px; text-decoration: none; margin-left: 60px;
+    }
+    @media (max-width:767px) {
+        .img-top{
+        width: 20vw;
+        height: 26px;
+        
+    }
+    .socialtop{
+        justify-content: center;
+        display: flex;
+        font-size: small;
+        margin-top: 10px;
+    }
+    .hindi{
+        word-spacing: normal;
+        letter-spacing: 1px;
+        font-size: xx-small;
+        text-align: center;
+    }
+    .menu-bar{
+        display: none;
+    }
+      .input-group{
+        /* margin-left: 5vw; */
+        /* display: flex; */
+        width: 60%;
+        height: 40px;
+        justify-content: center;
+    }
+    .humburger {
+        margin-top: 11px;
+     display: inline-block; 
+     }
+     .header-lower{
+        display: flex;
+    justify-content: space-between;
+     }
+     .Home-tag{
+        text-align: center; color: white; letter-spacing: 1px; font-size: x-small; text-decoration: none; margin-left: 10px;
+     }
+    .section-up{
+        display: block;
+    }
+        .footer1{
+    display: block;
+    
+   }
+   .footer-body{
+    margin: auto;
+   }
+   .footer-nav{
+    margin-bottom: 8vw;
+   }
+   .footer-logo{
+    width:25vw; height: 8vw; 
+   }
+   .container{
+    padding-top: px;
+    margin-bottom: 0px;
+   }
+}
