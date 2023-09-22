@@ -1,57 +1,58 @@
 import './ReadMore.css';
-import React, { useState } from 'react';
+import React from 'react';
+import Footer from '../footer/Footer'
+
 const ReadMore = (props) => {
     return (
         <>
-        <body class="container-fluid">
-            <header style="position: sticky; top: 0;">
-                <div class="d-flex justify-content-between  text-white " style="background-color: black;" >
-                    <img src="/images/officiallogojpg.png" class="img-top" ></img>
-                        <span class="mt-3 fw-bold " ><p class="hindi">"G.N. SHASTRI IAS INSTITUTE"</p></span>
+        <body className="container-fluid">
+            <header style={{position: 'sticky', top: 0}}>
+                <div className="d-flex justify-content-between  text-white " style={{backgroundColor: 'black'}}>
+                    <img src="/images/officiallogojpg.png" className="img-top" ></img>
+                        <span className="mt-3 fw-bold " ><p className="hindi">"G.N. SHASTRI IAS INSTITUTE"</p></span>
                         <span>
-                            <nav class="socialtop  me-1">
-                                <a class="whatsapp"  target="blank" href="https://chat.whatsapp.com/JMvqkwryPrHKLEDu8tNmYy"><span class="bi bi-whatsapp me-2 "></span></a>
-                                <a class="youtube"  target="blank" href="https://youtube.com/@g.n.shastrij5.8k"><span class="bi bi-youtube me-2"  ></span></a>
-                                <a class="telegram"  target="blank" href="https://t.me/gnshastrij"><span class="bi bi-telegram me-2" ></span></a>
-                                <a class="instagram"  target="blank" href=" https://www.instagram.com/invites/contact/?i=w3roop9b11ls&utm_content=p1y1hd6"><span class="bi bi-instagram me-2" ></span></a>
+                            <nav className="socialtop  me-1">
+                                <a className="whatsapp"  target="blank" href="https://chat.whatsapp.com/JMvqkwryPrHKLEDu8tNmYy"><span className="bi bi-whatsapp me-2 "></span></a>
+                                <a className="youtube"  target="blank" href="https://youtube.com/@g.n.shastrij5.8k"><span className="bi bi-youtube me-2"  ></span></a>
+                                <a className="telegram"  target="blank" href="https://t.me/gnshastrij"><span className="bi bi-telegram me-2" ></span></a>
+                                <a className="instagram"  target="blank" href=" https://www.instagram.com/invites/contact/?i=w3roop9b11ls&utm_content=p1y1hd6"><span className="bi bi-instagram me-2" ></span></a>
                             </nav>
                         </span>
                 </div>
                 <div  >
-                    <div class="header-lower" >
-                        <div class="humburger" id="menu-icon">
-                            <div class="bar"></div>
-                            <div class="bar"></div>
-                            <div class="bar"></div>
+                    <div className="header-lower" >
+                        <div className="humburger" id="menu-icon">
+                            <div className="bar"></div>
+                            <div className="bar"></div>
+                            <div className="bar"></div>
                         </div>
-                        <div class="menu-bar">
-                            <a class="menu-tittle" href="../Nikita/shastriji.html">Home</a>
-                            <a class="menu-tittle" href="../Nikhil/shastrijiabout.html">About Us</a>
-                            <a class="menu-tittle" href="#about">Contact</a>
-                            <a class="menu-tittle" href="../Nikhil/shastrijiFAQs.html">FAQs</a>
+                        <div className="menu-bar">
+                            <a className="menu-tittle" href="../Nikita/shastriji.html">Home</a>
+                            <a className="menu-tittle" href="../Nikhil/shastrijiabout.html">About Us</a>
+                            <a className="menu-tittle" href="#about">Contact</a>
+                            <a className="menu-tittle" href="../Nikhil/shastrijiFAQs.html">FAQs</a>
                         </div>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for notes" name="search">
-                                <button class="btn btn-primary" type="submit">
-                                    <span class="bi bi-search "></span>
-                                </button>
-                            </input>
+                        <div className="input-group">
+                            <input type="text" className="form-control" placeholder="Search for notes" name="search" />
+                            <button className="btn btn-primary" type="submit">
+                                <span className="bi bi-search "></span>
+                            </button>
                         </div>
                         <div>
-                            <span class="bi bi-cart" style="margin-right: 30px; font-size: 20px; padding-left:5px ;"></span>
-                            <div style="padding-bottom: 10px;">Cart</div>
+                            <span className="bi bi-cart" style={{marginRight: '30px', fontSize: '20px', paddingLeft:'5px'}}></span>
+                            <div style={{paddingBottom: '10px'}}>Cart</div>
                         </div>
                     </div>
                 </div>
             </header>
             <section>
                 <div id="Home">
-                    <h5 class="Home-tag">"SANSKRIT OPTIONAL UPSC"</h5>
+                    <h5 className="Home-tag">"SANSKRIT OPTIONAL UPSC"</h5>
                 </div>
-                <div class="container pb-4">
-                    <h6>Director's message &nbsp;<span class="bi bi-arrow-right"></span></h6>
-                    <p class="mt-4 pt-4">Greatings to all of you,<b>Hello...</b></p>
-                    <blockquote class="m-4 p-2 mb-3">I, G. N. Shastri, director and founder of G N Shastri IAS Institute, have devoted more than 10 years in study of Sanskrit language and literature. I have been teaching Sanskrit literature to UPSC aspirants for more than 2 years now.
+                <div className="container pb-4">
+                    <h6>Director's message &nbsp;<span className="bi bi-arrow-right"></span></h6>
+                    <p className="mt-4 pt-4">Greatings to all of you,<b>Hello...</b></p>
+                    <blockquote className="m-4 p-2 mb-3">I, G. N. Shastri, director and founder of G N Shastri IAS Institute, have devoted more than 10 years in study of Sanskrit language and literature. I have been teaching Sanskrit literature to UPSC aspirants for more than 2 years now.
 
                         More than 50 students have benefited under my guidance and gotten a boost in their scores. This year also, our institute is expecting good results as many of our students have qualified for mains too.
 
@@ -60,40 +61,7 @@ const ReadMore = (props) => {
                         Demo notes and lectures are available in the downloads section. Thanks for visiting the site. <b>" जयतु संस्कृतं जयतु विश्वम् "</b></blockquote>
                 </div>
             </section>
-            <footer id="about">
-                <div class="footer1">
-                    <div class="footer-body">
-                        <div class="title">Sanskrit_Optional_UPSC</div>
-                        <div class="footer-nav">
-                            <nav class="mt-3 me-4" >
-                                <a class="whatsapp" target="_blank" href="https://chat.whatsapp.com/JMvqkwryPrHKLEDu8tNmYy"><span class="bi bi-whatsapp me-2 " style="font-size: 20px; color: rgb(110, 179, 7);"></span></a>
-                                <a class="youtube" target="blank" href="https://youtube.com/@g.n.shastrij5.8k"><span class="bi bi-youtube me-2" style="font-size: 20px;color: red;"></span></a>
-                                <a class="telegram" target="blank" href="https://t.me/gnshastrij"><span class="bi bi-telegram me-2" style="font-size: 20px;color: rgb(59, 134, 159);"></span></a>
-                                <a class="instagram" target="blank" href=" https://www.instagram.com/invites/contact/?i=w3roop9b11ls&utm_content=p1y1hd6"><span class="bi bi-instagram me-2" style="font-size: 20px;color:rgb(222, 72, 18);"></span></a>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="footer-body">
-                        <h4 style="color: gray;">Get in touch with US</h4>
-                        <div class="bi bi-house-fill"> Bhopal(M.P.),464001 </div>
-                        <div class="bi bi-envelope-fill"> g.n.shastri1999@gmail.com</div>
-                        <div class="bi bi-person-fill">+91 7879877858</div>
-                        <details>
-                            <summary>Support</summary>
-                            <div>+91 9131437980</div>
-                        </details>
-                        <details>
-                            <summary>director of Institute</summary>
-                            <div>+91 7879877858</div>
-                        </details>
-                    </div>
-                </div>
-                <div style="padding-top: 30px; color: gray;">
-                    <h3>&#169;2023 All rights reserved.</h3>
-                    <div style="display: flex; justify-content: center;"><img src="../../public/officiallogojpg.png" class="footer-logo"></img></div>
-                </div>
-            </footer>
-           
+            <Footer />
         </body>
     </>
     )

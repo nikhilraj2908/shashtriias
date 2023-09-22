@@ -2,7 +2,7 @@ footer{
     padding: 30px;
     background-color: black ;
     color: white;
-   }
+}
    .header-lower{
         display: flex;
         /* grid-template-columns: 1fr 5fr 5fr 1fr; */
@@ -84,7 +84,6 @@ footer{
     list-style: disc;
    }
    .card{
-    background-image: url(../../public/faqs.jpg);
     width: 20%;
     height: 40%;
    }
