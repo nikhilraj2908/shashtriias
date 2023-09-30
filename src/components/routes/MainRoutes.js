@@ -3,6 +3,7 @@ import About from '../about/about'
 import ReadMore from '../readMore/readMore'
 import Faqs from '../faqs/FAQs'
 import Home from '../home/Home'
+import Admin from '../admin/admin'
 
 const MainRoutes = () => (
     <Routes>
@@ -10,6 +11,7 @@ const MainRoutes = () => (
       <Route exact path="/about" element={<About />}/>
       <Route exact path="/faqs" element={<Faqs />}/>
       <Route exact path="/read-more" element={<ReadMore />}/>
+      <Route exact path="/admin" element={<Admin />}/>
     </Routes>
 )
 

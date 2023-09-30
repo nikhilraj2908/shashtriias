@@ -1,12 +1,12 @@
 import './home.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Cards from '../cards';
-import { Link } from "react-router-dom";
 import Footer from '../footer/Footer'
-
+import Header from '../header/Header'
 
 function Home() {
   const [notes, setNotes] = useState([])
@@ -62,7 +62,6 @@ function Home() {
     ).catch(error =>{
         console.log(error)
     })
-
 }
 
 const filterBySearch = (event) => {
@@ -86,55 +85,7 @@ const filterBySearch = (event) => {
   console.log(notes)
   return (
     <body className="container-fluid">
-      <header className="position-sticky top-0" style={{zIndex:'1'}} >
-        <div className=" d-flex  justify-content-between text-white " style={{backgroundColor:'black'}}>
-          <img alt = 'officialLogo' src='/images/officiallogojpg.png' className="img-top " />
-          <span className=" mt-3 fw-bold " ><p className="hindi" >"G.N. SHASTRI IAS INSTITUTE"</p></span>
-          <span>
-            <nav className="socialtop  me-1">
-              <a id="whatsapp" className="socialtop" target="blank" href="https://chat.whatsapp.com/JMvqkwryPrHKLEDu8tNmYy"><span className="bi bi-whatsapp me-2 " ></span></a>
-              <a id="youtube" className="socialtop" target="blank" href="https://youtube.com/@g.n.shastrij5.8k"><span className="bi bi-youtube me-2"></span></a>
-              <a id="telegram" className="socialtop" target="blank" href="https://t.me/gnshastrij"><span className="bi bi-telegram me-2"></span></a>
-              <a id="instagram" className="socialtop" target="blank" href=" https://www.instagram.com/invites/contact/?i=w3roop9b11ls&utm_content=p1y1hd6"><span className="bi bi-instagram me-2" ></span></a>
-            </nav>
-          </span>
-        </div>
-        <div className="header-lower" >
-          <div className="humburger" id="menu-icon">
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-          </div>
-          <div className="header-menu">
-            <a className="menu-bar" href="#Home">Home</a>
-            <span className="menu-bar">
-              <a href="#courses">Courses</a>
-            </span>
-            <span className="menu-bar">
-              <a href="#blogs" >Blogs</a>
-            </span>
-            <span className="menu-bar">
-              <Link to="/about">About Us</Link>
-            </span>
-            <span className="menu-bar">
-              <a href="#about">Contact</a>
-            </span>
-            <span className="menu-bar">
-              <Link to="/faqs">FAQs</Link>
-            </span>
-          </div>
-          <div className="input-group">
-            <input type="text" className="form-control" onChange={filterBySearch} placeholder="Search for notes" name="search"/>
-            <button className="btn btn-primary" type="submit">
-              <span className="bi bi-search"></span>
-            </button>
-          </div>
-          <div>
-            <span className="bi bi-cart" style={{marginRight:'30px', fontSize:'20px', paddingLeft:'5px'}}></span>
-            <div style={{paddingBottom: '10px'}}>Cart</div>
-          </div>
-        </div>
-      </header>
+      <Header/>
       <section style={{zIndex:'0'}}>
         <div id="Home">
           <h5 className="Home-tag">"SANSKRIT OPTIONAL UPSC"</h5>
@@ -184,19 +135,21 @@ const filterBySearch = (event) => {
             </article>
           </aside>
         </div>
-        <div >
-          <div id="courses" className="books"><h3 style={{textAlign: 'center', textDecoration: 'underline', color: 'rebeccapurple'}}>Some Notes and PDFs</h3></div>
-          <div style={{flexWrap: 'wrap', display: 'flex', maxWidth: '960px', justifyContent: 'center', margin:'0 auto'}}>
-          <ul className='nav-courses justify-content-sm-center mb-4 px-3'>
-            <li className='course me-2 ms-5 me-sm-5'><button style={showPapers ? btnStyle : coursesBtn} onClick={handlePaperClick}>Papers</button></li>
-            <li className='course me-2 me-sm-5'><button style={showHandWritten ? btnStyle : coursesBtn} onClick={handleHandWrittenClick}>Hand written notes</button></li>
-            <li className='course me-2 me-sm-5'><button style={showAnswerWritting ? btnStyle : coursesBtn} onClick={handleAnswerWrittingClick}>Answer writting</button></li>
-          </ul>
-          {showPapers && <Cards pdfs={notes.filter(note=> note.note_type == 1)}/>}
-          {showHandWritten && <Cards pdfs={notes.filter(note=> note.note_type == 2)}/>}
-          {showAnswerWritting && <Cards pdfs={notes.filter(note=> note.note_type == 3)}/>}
-          {searchActive && <Cards pdfs={filteredNotes}/>}
-          </div>
+        <div id='courses'>
+            <div className="books"><h3 style={{textAlign: 'center', textDecoration: 'underline', color: 'rebeccapurple'}}>Some Notes and PDFs</h3></div>
+            <div style={{flexWrap: 'wrap', display: 'flex', maxWidth: '960px', justifyContent: 'center', margin:'0 auto'}}>
+                <ul className='nav-courses justify-content-sm-center mb-4 px-3'>
+                    <li className='course me-2 ms-5 me-sm-5'><button style={showPapers ? btnStyle : coursesBtn} onClick={handlePaperClick}>Papers</button></li>
+                    <li className='course me-2 me-sm-5'><button style={showHandWritten ? btnStyle : coursesBtn} onClick={handleHandWrittenClick}>Hand written notes</button></li>
+                    <li className='course me-2 me-sm-5'><button style={showAnswerWritting ? btnStyle : coursesBtn} onClick={handleAnswerWrittingClick}>Answer writting</button></li>
+                </ul>
+                <div style={{width: '80%'}}>
+                    {showPapers && <Cards pdfs={notes.filter(note=> note.note_type == 1)}/>}
+                    {showHandWritten && <Cards pdfs={notes.filter(note=> note.note_type == 2)}/>}
+                    {showAnswerWritting && <Cards pdfs={notes.filter(note=> note.note_type == 3)}/>}
+                    {searchActive && <Cards pdfs={filteredNotes}/>}
+                </div>  
+            </div>
         </div>
       </section>
       <hr/>
@@ -241,9 +194,9 @@ const filterBySearch = (event) => {
           </div>
         </div>
       </section>
-      <Footer />
-      <link src="../node_modules/jquery/dist/jquery.js"/>
-      <link src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"/>
+      <div id="contact">
+        <Footer />
+      </div>
     </body>
   );
 }

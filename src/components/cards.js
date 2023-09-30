@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import PDFFiles from "./pdfFiles";
 import Modal from 'react-modal';
+import Payment from "./payment/payment";
 
 const Cards = (props) => {
     const [currentPdf, setCurrentPdf] = useState(false)
-    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const [paymentPage, setPaymentPage] = useState(false)
 
     const pdfs = props.pdfs
     console.log(props.pdfs)
@@ -13,6 +15,10 @@ const Cards = (props) => {
         setIsOpen(true);
       }
 
+    const showPaymentPage = (pdf) => {
+        setCurrentPdf(pdf) 
+        setPaymentPage(true)
+    }
     const afterOpenModal = () => {
         // references are now sync'd and can be accessed.
       }
@@ -40,9 +46,10 @@ const Cards = (props) => {
             backgroundColor:'grey'
           },
       };
+      console.log(currentPdf)
     return(
         <>
-            <div class="d-flex justify-content-center">
+            <div style={{flexWrap: 'wrap', display: 'flex', maxWidth: '960px', justifyContent: 'center', margin:'0 auto'}}>
                 {
                     pdfs.map((pdf)=> (
                         <div className="card3" >
@@ -53,6 +60,7 @@ const Cards = (props) => {
                             <p className="card-text"> sanskrit upse paper - 2022</p>
                             <div class="d-flex justify-content-center">
                                 <button class="btn btn-primary" onClick={() => handleReadNotes(pdf)}>read notes</button>
+                                <button class="btn btn-primary" onClick={() => showPaymentPage(pdf)}>Buy full course</button>
                             </div>
                         </div>
                     ))
@@ -70,6 +78,10 @@ const Cards = (props) => {
                     <button style={{position: 'absolute', zIndex: 2, marginTop: '-15px', right: 0, marginRight: '5px', backgroundColor: 'red', borderRadius: '50%', border: 'none'}} onClick={closeModal}><span className="bi bi-x"></span></button>
                     <PDFFiles file={currentPdf}/>
                 </Modal>       
+            }
+            {
+                paymentPage && 
+                <Payment amount={currentPdf.price}/>
             }
         </>
         

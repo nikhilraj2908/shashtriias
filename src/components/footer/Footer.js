@@ -3,7 +3,7 @@ import React from "react";
 const Footer =  () => {
 
     return (
-        <footer id="about">
+        <footer>
         <div className="footer1">
           <div className="footer-body" >
             <div className="title">Sanskrit_Optional_UPSC</div>
