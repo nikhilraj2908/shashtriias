@@ -2,33 +2,8 @@ import './ReadMore.css';
 import React from 'react';
 import Footer from '../footer/Footer'
 import Header from '../header/Header'
-import { useState } from 'react';
 
 const ReadMore = (props) => {
-    const [notes, setNotes] = useState([])
-  const [searchActive, setSearchActive] = useState(false)
-  const [filteredNotes, setFilteredNotes] = useState([])
-  const [showPapers, setShowPapers] = useState(true)
-  const [showHandWritten, setShowHandWritten] = useState(false)
-  const [showAnswerWritting, setShowAnswerWritting] = useState(false)
-
-    const filterBySearch = (event) => {
-        setSearchActive(true)
-        setShowPapers(false)
-        setShowAnswerWritting(false)
-        setShowHandWritten(false)
-        console.log(event.target.value)
-        // Access input value
-        const query = event.target.value;
-        // Create copy of item list
-        var updatedList = [...notes];
-        // Include all elements which includes the search query
-        updatedList = updatedList.filter((item) => {
-          return item.subject.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-        });
-        // Trigger render with updated values
-        setFilteredNotes(updatedList);
-      };
     return (
         <>
         <body>

@@ -3,7 +3,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 import { useLocation } from 'react-router-dom'
 
 const Header = () => {
-  const [notes, setNotes] = useState([])
+  const notes = []
   const [searchActive, setSearchActive] = useState(false)
   const [filteredNotes, setFilteredNotes] = useState([])
   const [showPapers, setShowPapers] = useState(true)

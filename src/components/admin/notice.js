@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { defaultOptions, checkStatus, parseJSON } from "../../services/fetchTools";
+import { checkStatus, parseJSON } from "../../services/fetchTools";
 const Notice = () => {
     const [notice, setNotice] = useState('');
     const [noticeList, setNoticeList] = useState([]);
