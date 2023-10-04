@@ -3,6 +3,7 @@ import React from 'react';
 import Footer from '../footer/Footer'
 import Header from '../header/Header'
 import { useState } from 'react';
+
 const ReadMore = (props) => {
     const [notes, setNotes] = useState([])
   const [searchActive, setSearchActive] = useState(false)
@@ -36,7 +37,7 @@ const ReadMore = (props) => {
                 <div id="Home">
                     <h5 className="Home-tag">"SANSKRIT OPTIONAL UPSC"</h5>
                 </div>
-                <div className="container pb-4">
+                <div className="readmore-container pb-4">
                     <h6>Director's message &nbsp;<span className="bi bi-arrow-right"></span></h6>
                     <p className="mt-4 pt-4">Greatings to all of you,<b>Hello...</b></p>
                     <blockquote className="m-4 p-2 mb-3">I, G. N. Shastri, director and founder of G N Shastri IAS Institute, have devoted more than 10 years in study of Sanskrit language and literature. I have been teaching Sanskrit literature to UPSC aspirants for more than 2 years now.

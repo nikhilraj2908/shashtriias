@@ -1,0 +1,44 @@
+.blog-list{
+    background-color: #333333;
+    color: #F5F5F5;
+    margin-bottom: 2vw;
+    /* width: 100%; */
+    /* display: flex; */
+    align-items: center;
+    height: 20vw;
+    border: 1px solid white;
+    box-shadow:2px 2px 1px #333333;
+   }
+   
+   blockquote{
+    font: italic;
+    text-align: justify;
+    text-indent: 50px;
+   }
+   nav a{
+    color: white;
+   }
+   
+   .blog-card-img{
+    width: 100%;
+    height: 50%;
+    padding: 5px;
+   }
+   .blog-container{
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    
+   }
+   .img-top{
+    width: 9vw;
+    height: 2.5vw;
+    margin-left: 30px;
+    margin-top: 8px;
+   }
+  
+   .blog-screen, .blog-list {
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+    margin: 5px;
+    padding: 5px;
+   }

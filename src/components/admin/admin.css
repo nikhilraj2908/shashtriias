@@ -1,0 +1,33 @@
+.th-element{
+    background-color: aqua;
+}
+.table{
+    background-color: black;
+}
+table {
+    background-color: aquamarine;
+}
+.card-notice{
+    /* width:50%; */
+}
+.notes-input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.container-notes{
+    margin-bottom: 10px;
+    background-color: #cce6fc;
+    border-radius: 10px;
+    width: 50%;
+    padding: 5px;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.notes-added{
+    border-radius: 10px;
+    align-items: center;
+}

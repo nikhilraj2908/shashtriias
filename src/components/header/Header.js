@@ -62,7 +62,7 @@ const Header = () => {
                             </Link>
                         </span>
                         <span className="menu-bar">
-                            <Link to="/#blogs">
+                            <Link to="/blogs">
                                 Blogs
                             </Link>
                         </span>

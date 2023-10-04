@@ -36,7 +36,7 @@ return (
                 <div id="Home">
                     <h5 className="Home-tag">"SANSKRIT OPTIONAL UPSC"</h5>
                 </div>
-                <div className="container mt-4 p-3"  >
+                <div className="faqs-container mt-4 p-3"  >
                     <h4>Here are some frequently asked questions (FAQs) along with their answers:</h4>
                     <details>
                         <summary><b>Q1:Why you should choose our institute?</b></summary>
@@ -93,7 +93,7 @@ return (
                         <div>Our notes are original, regularly updated, and not widely circulated. They are designed to align with current trends and provide you with fresh and relevant content.</div>
                     </details>
                 </div>   
-                <div className="container mt-4 p-3"  >
+                <div className="faqs-container mt-4 p-3"  >
                     <h4>यहाँ कुछ आम पूछे जाने वाले प्रश्न (FAQs) और उनके उत्तर दिए गए हैं:</h4>
                     <details>
                         <summary><b>Q1:सर जी, हम आपकी कोचिंग क्यों चुनें?</b></summary>

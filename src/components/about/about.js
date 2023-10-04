@@ -37,7 +37,7 @@ const About = (props) => {
                     <div id="Home">
                         <h5 className="Home-tag">"SANSKRIT OPTIONAL UPSC"</h5>
                     </div>
-                    <div className="container pb-4">
+                    <div className="about-container pb-4">
                         <h6>ABOUT_G.N._SHASTRI_IAS_INSTITUTE &nbsp;<span className="bi bi-arrow-right"></span></h6>
                         <p className="mt-4 pt-4">Greatings to all of you,<b>Hello...</b></p>
                         <blockquote className="m-4 p-2 mb-3">Our Vision is to improve the result in Sanskrit optional UPSC CSE by providing quality content and better notes by removing the problem of content in Sanskrit optional and also to provide platform to many Sanskrit experienced toppers and students for Sanskrit optional UPSC CSE.<br></br>
