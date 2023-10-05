@@ -4,6 +4,7 @@ import Footer from '../footer/Footer'
 import Header from '../header/Header'
 import Notice from "./notice";
 import StudentTable from "./studentTable";
+import Blog from "./blog";
 
 const Admin = () => {
     return (
@@ -11,6 +12,7 @@ const Admin = () => {
             <Header />
             <StudentTable />
             <Notice />
+            <Blog />
             <Footer />
         </body>
     )

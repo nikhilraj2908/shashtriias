@@ -58,9 +58,9 @@ const Cards = (props) => {
                                 <h4>{pdf.subject}</h4>
                             </div>
                             <p className="card-text"> sanskrit upse paper - 2022</p>
-                            <div class="d-flex justify-content-center">
-                                <button class="btn btn-primary" onClick={() => handleReadNotes(pdf)}>read notes</button>
-                                <button class="btn btn-primary" onClick={() => showPaymentPage(pdf)}>Buy full course</button>
+                            <div class="btn-group d-flex justify-content-center">
+                                <button class="btn btn-info" onClick={() => handleReadNotes(pdf)}>Read Notes</button>
+                                <button class="btn btn-success" onClick={() => showPaymentPage(pdf)}>Buy full course</button>
                             </div>
                         </div>
                     ))

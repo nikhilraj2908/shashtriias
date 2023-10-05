@@ -6,7 +6,7 @@ import Header from '../header/Header'
 const ReadMore = (props) => {
     return (
         <>
-        <body>
+        <body className='container-fluid'>
             <Header/>
             <section>
                 <div id="Home">

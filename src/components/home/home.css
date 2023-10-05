@@ -236,11 +236,11 @@
   color: aliceblue;
   }
   .card3{
-    width: 30%;
+    width: 35%;
     border: 2px solid #dddfe0;
     border-radius: 10px;
     padding: 10px;
-    margin-left: 5%;
+    margin-left: 3%;
   }
   @media (max-width:767px){
     .course{
@@ -257,10 +257,10 @@
         border-radius: 0.625rem;
     }
     .card3{
-        margin: 1%;
-        width: 100%;
-        border: 2px solid #dddfe0;
-        border-radius: 10px;
+        /* margin: 1%; */
+        /* width: 100%; */
+        /* border: 2px solid #dddfe0; */
+        /* border-radius: 10px; */
       }
   .img-top{
     width: 20vw;
