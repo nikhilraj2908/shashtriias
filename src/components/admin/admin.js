@@ -8,7 +8,7 @@ import Blog from "./blog";
 
 const Admin = () => {
     return (
-        <body>
+        <body className="container-fluid">
             <Header />
             <StudentTable />
             <Notice />

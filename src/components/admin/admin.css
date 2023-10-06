@@ -7,9 +7,6 @@
 table {
     background-color: aquamarine;
 }
-.card-notice{
-    /* width:50%; */
-}
 .notes-input{
     width: 100%;
     display: flex;
@@ -99,15 +96,10 @@ text-indent: 50px;
 nav a{
 color: white;
 }
-.card-img{
+.admin-card-img{
 width: 100%;
 height: 50%;
 padding: 5px;
-}
-.container{
-display: grid;
-grid-template-columns: 9fr 3fr;
-
 }
 .img-top{
 width: 9vw;
@@ -121,3 +113,40 @@ border-radius: 4px;
 margin: 5px;
 padding: 5px;
 }
+.container-blogadmin{
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    
+   }
+   .tittle-input{
+    background-color: #ECF5FF;
+    position: relative;
+    z-index: 1;
+   }
+   .tittle-input:focus{
+    background-color: #F5F5F5;
+    outline: none;
+   }
+   .tittle{
+    width: 100%;
+    z-index: 0;
+   }
+   .blog-discription{
+    width: 100%;
+    border: none;
+    background-color: #ECF5FF;
+    padding: 10px;
+   }
+   .blog-discription:focus{
+    outline-color: lightgray;
+   }
+   .blog-containt{
+    width: 100%;
+    height: 45vw;
+    border: none;
+    background-color: #ECF5FF;
+    padding: 10px;
+   }
+   .blog-containt:focus{
+    outline-color: lightgray;
+   }

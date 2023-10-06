@@ -4,7 +4,7 @@ import './blogs.css';
 
 const Blog = () => {
     return (
-        <body>
+        <body className='container-fluid'>
             <Header />
             <section style={{marginLeft:'50px', marginRight:'50px'}}>
                 <div style={{display:'flex', alignItems:'center', margin:'2vw'}}>

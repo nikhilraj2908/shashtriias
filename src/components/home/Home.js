@@ -15,6 +15,8 @@ function Home() {
   const [showPapers, setShowPapers] = useState(true)
   const [showHandWritten, setShowHandWritten] = useState(false)
   const [showAnswerWritting, setShowAnswerWritting] = useState(false)
+  const [noticeList, setNoticeList] = useState([]);
+
 
   let api = 'http://127.0.0.1:8000/api'
   const btnStyle = {
@@ -30,7 +32,18 @@ function Home() {
   }
   useEffect(()=>{
     getFiles()
+    getNoticeList()
   },[])
+
+  const getNoticeList = () => {
+    axios.get('http://127.0.0.1:8000/api' + '/notices/').then(
+        response => {
+            setNoticeList(response.data)
+        }
+    ).catch(error => {
+        console.log(error)
+    })
+  }
 
   const handlePaperClick = () => {
     setShowPapers(true)
@@ -82,7 +95,7 @@ const filterBySearch = (event) => {
   setFilteredNotes(updatedList);
 };
 
-  console.log(notes)
+  console.log('notices..',noticeList)
   return (
     <body className="container-fluid">
       <Header/>
@@ -121,15 +134,13 @@ const filterBySearch = (event) => {
               <h5>Important Notices</h5>
               <marquee scrollamount="2" direction="up" >
                 <ol>
-                  <li>`SANSKRIT OPTIONAL ONLINE COURSE START "1 SEPTEMBER 2023" `</li>
-                  <li>SANSKRIT OPTIONAL TEST SERIES AVAILABLE.</li>
-                  <li>SANSKRIT OPTIONAL HAND WRITERN NOTES AVAILABLE.</li>
-                  <li>SANSKRIT OPTIONAL OUR BEST MODEL ANSWERS AND TOPPER ANSWER AVAILABLE.</li>
-                  <li>New notes of chapter 5 has come</li>
-                  <li>New notes of chapter 6 has come</li>
-                  <li>New notes of chapter 7 has come</li>
-                  <li>New notes of chapter 8 has come</li>
-                  <li>New notes of chapter 9 has come</li>
+                  {
+                    noticeList.map((value)=>{
+                      return (
+                        <li>{value.content}</li>
+                      )
+                    })
+                  }
                 </ol>
               </marquee>
             </article>
