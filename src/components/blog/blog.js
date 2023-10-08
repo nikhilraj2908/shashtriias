@@ -1,8 +1,42 @@
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import './blogs.css';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Blog = () => {
+    const [blogs, setBlogs] = useState()
+    const [blogImage, setBlogImage] = useState()
+    const [blogTitle, setBlogTitle] = useState()
+    const [description, setDescription] = useState()
+    const [content, setContent] = useState()
+    
+    useEffect(()=>{
+        getBlogs()
+    },[])
+
+    const getBlogs = () => {
+        axios.get('http://127.0.0.1:8000/api' + '/blogs/').then(
+            response => {
+                console.log(response)
+                setBlogs(response.data)
+                setBlogImage(response.data[0].image)
+                setBlogTitle(response.data[0].title)
+                setDescription(response.data[0].description)
+                setContent(response.data[0].content)
+            }
+        ).catch(error => {
+            console.log(error)
+        })
+    }
+
+    const handleReadBlog = (e, blog) => {
+        setBlogImage(blog.image)
+        setBlogTitle(blog.title)
+        setDescription(blog.description)
+        setContent(blog.content)
+    }
+
     return (
         <body className='container-fluid'>
             <Header />
@@ -31,47 +65,37 @@ const Blog = () => {
                 <div className="blog-container">
                     <div className="blog-screen">
                         <div className="blog-header" style={{backgroundColor: '#ECF5FF', color: '#333333' , padding: '5px'}}>
-                            <h2>How many books can a human being read in his life?</h2>
-                            <div><p>The number of books a person can read in their lifetime varies widely and depends on several factors, including their reading speed, available time, interests, and lifespan...
-                            </p></div>
+                            <h2>{blogTitle}</h2>
+                            <div><p>{description}</p></div>
                         </div>
                         <hr />
                         <div className="blog-body" style={{backgroundColor: '#ECF5FF', padding: '5px'}}>
-                            <img src="images/bannerupsc1.png" className="img-fluide" style={{height: '300px', width:'100%',   borderRadius: '10px'}} alt="img-blog" />
-                            <p>The author of the book 'Ambedkar', is a member of The Planning Commission, an establishment totally or almost totally lacking creativity, innovation or imagination. Professor Jadhav is a distinguished exception. He studied in the United States, obtaining PhD in Economics. The last worthwhile book on Ambedkar was written by Dr. Dhananjay Keer. It was published in 1954. Dr. B.R. Ambedkar was arguably among the most brilliant Indian intellectuals of the 20th century. His life is a triumph of character over circumstances.
-                                ADVERTISEMENT
-
-                                He,for the first thirty five years of his life was subjected to the most appalling humiliations, brutal discrimination and indignities for being an untouchable. The dice was loaded against him right from his birth.
-
-                                He was born in a Mahar family on 14 April 1893. He died at the age of fifty six on 6th December 1956. He made it to the Elphiston College in Bombay. He could neither buy books nor clothes. He was lent books by one of his professors who also gave him clothes.
-                                He,for the first thirty five years of his life was subjected to the most appalling humiliations, brutal discrimination and indignities for being an untouchable. The dice was loaded against him right from his birth.
-
-                                He was born in a Mahar family on 14 April 1893. He died at the age of fifty six on 6th December 1956. He made it to the Elphiston College in Bombay. He could neither buy books nor clothes. He was lent books by one of his professors who also gave him clothes.
-
-                                At the age of 22, he was given scholarship by the enlightened Gaikward of Baroda, which enable him to join Columbia University in New York. He passed his M.A and obtained a PhD with high distinction. Similarly he did exceptionally at the London School of Economics. THE LOT of the untouchables in India were worse then that of Negros (Blacks) in America.
-                                At the age of 22, he was given scholarship by the enlightened Gaikward of Baroda, which enable him to join Columbia University in New York. He passed his M.A and obtained a PhD with high distinction. Similarly he did exceptionally at the London School of Economics. THE LOT of the untouchables in India were worse then that of Negros (Blacks) in America.</p>
+                            <img src={blogImage} className="img-fluide" style={{height: '300px', width:'100%',   borderRadius: '10px'}} alt="img-blog" />
+                            <p>{content}</p>
                         </div>
-                        <div className="blog-footer btn-group" style={{textAlign: 'center', marginTop: '1vw', display: 'block'}}>
+                        {/* <div className="blog-footer btn-group" style={{textAlign: 'center', marginTop: '1vw', display: 'block'}}>
                             <button className="btn btn-warning" >Go Next</button>
                             <button className="btn btn-success" >Read Next</button>
 
-                        </div>
+                        </div> */}
                     </div>
-                    <div>
-                        <div className="blog-list">
-                            <img className="blog-card-img" src="images/bannerupsc1.png" />
-                            <div style={{marginTop: '10px' , padding: '5px'}}><h4>How many books can human being read in life?</h4><div><p>The number of books a person can including their reading speed, </p></div></div>
-                        </div>
-                        <div className="blog-list">
-                            <img className="blog-card-img" src="images/bannerupsc1.png" />
-                            <div style={{marginTop: '10px' , padding: '5px'}}><h4>How many books can human being read in life?</h4><div><p>The number of books a person can including their reading speed, </p></div></div>
-                        </div>
-                        <div className="blog-list">
-                            <img className="blog-card-img" src="images/bannerupsc1.png" />
-                            <div style={{marginTop: '10px' , padding: '5px'}}><h4>How many books can human being read in life?</h4><div><p>The number of books a person can including their reading speed, </p></div></div>
-                        </div>
-                    </div>
-
+                    <div style={{height: '60vw', overflow: 'scroll'}}>
+                    {
+                        blogs && blogs.map((blog)=>{
+                            return (
+                                <div onClick={(e)=>handleReadBlog(e,blog)} className="blog-list">
+                                    <img className="admin-card-img" src={blog.image} alt="blog-image" />
+                                    <div style={{ marginTop: '10px', padding: '5px' }}>
+                                        <h4>{blog.title}</h4>
+                                        <div>
+                                            <p>{blog.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
                 </div>
 
             </section>

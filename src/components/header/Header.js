@@ -93,7 +93,7 @@ const Header = () => {
                             <Link to="/faqs">FAQs</Link>
                         </span>
                     </div>
-                    <div className="input-group" style={{display: (currentPath == '/faqs' || currentPath == '/about') ? 'none': 'flex'}}>
+                    <div className="input-group" style={{display: (currentPath == '/admin' || currentPath == '/faqs' || currentPath == '/about' || currentPath == '/blogs') ? 'none': 'flex'}}>
                         <input type="text" className="form-control" onChange={filterBySearch} placeholder="Search for notes" name="search" />
                         <button className="btn btn-primary" type="submit">
                             <span className="bi bi-search"></span>
