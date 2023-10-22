@@ -8,6 +8,7 @@ const Cards = (props) => {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [paymentPage, setPaymentPage] = useState(false)
 
+    // checking commits
     const pdfs = props.pdfs
     console.log(props.pdfs)
 
